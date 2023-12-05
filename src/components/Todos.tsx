@@ -5,12 +5,19 @@ import axios from "axios";
 import LoadingUi from "./LoadingUi";
 import TodoCard from "./TodoCard";
 
-export default function TodosClient() {
+type TodosClientProps = {
+  initialTodos?: TodoType[];
+};
+
+export default function Todos({ initialTodos }: TodosClientProps) {
   const {
     data: todos,
     isLoading,
     isError,
   } = useQuery({
+    initialData: initialTodos,
+    refetchOnMount: false,
+    refetchOnWindowFocus: false,
     queryKey: ["userTodos"],
     queryFn: async () => {
       const { data } = await axios.get("https://dummyjson.com/todos");
