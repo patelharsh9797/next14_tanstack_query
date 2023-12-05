@@ -6,13 +6,22 @@ export default function Home() {
     <>
       <h2 className="text-2xl text-center pt-12 text-primary">{`Testing the new 'React Query 5' w/ 'Next.js 14'`}</h2>
       <div className="flex items-center justify-center flex-wrap gap-8">
-        <Link href="client" className={buttonVariants()}>
+        <Link href="/client" className={buttonVariants()}>
           Client Side Query
         </Link>
-        <Link href="server" className={buttonVariants()}>
+        <Link href="/server" className={buttonVariants()}>
           Server Side Query
         </Link>
       </div>
+      <Link
+        href="/actions"
+        className={buttonVariants({
+          variant: "link",
+          className: "-mt-4",
+        })}
+      >
+        Server Side w/ Actions
+      </Link>
     </>
   );
 }

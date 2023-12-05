@@ -18,7 +18,7 @@ export default async function page() {
           This is SERVER side fetch for todos. Check page source for more.
         </h2>
         <p className="text-muted-foreground">
-          {`If you refresh the page you are not getting that loading state. It's fetching the data in server side and pass the intial data to our same <Todos /> component. But since it's already have the intial data it's fully rendred on the server.`}
+          {`If you refresh the page you are not getting that loading state. It's fetching the data in server side and pass the initial data to our same <Todos /> component. But since it's already have the initial data it's fully rendered on the server.`}
         </p>
       </div>
       <Todos initialTodos={initialTodos} />

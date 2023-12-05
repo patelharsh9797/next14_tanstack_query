@@ -35,7 +35,7 @@ export default function Todos({ initialTodos }: TodosClientProps) {
     <>
       <div className="grid md:grid-cols-2 gap-4">
         {todos.map((todo) => (
-          <TodoCard {...todo} />
+          <TodoCard key={todo.id} {...todo} />
         ))}
       </div>
     </>

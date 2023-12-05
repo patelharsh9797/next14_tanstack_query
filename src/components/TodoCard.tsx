@@ -11,9 +11,13 @@ import {
 } from "@/components/ui/card";
 import { Button } from "./ui/button";
 
-export default function TodoCard({ todo, completed }: TodoType) {
+export default function TodoCard({
+  todo,
+  completed,
+  className,
+}: TodoType & { className?: string }) {
   return (
-    <Card>
+    <Card className={className}>
       <CardHeader>
         <CardTitle className={completed ? "line-through" : ""}>
           {todo}

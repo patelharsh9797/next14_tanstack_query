@@ -1,13 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 import QueryProvider from "@/components/providers/QueryProvider";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { ModeToggle } from "@/components/ModeToggle";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={GeistSans.className}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -36,7 +34,7 @@ export default function RootLayout({
                   className={buttonVariants({
                     variant: "link",
                     className:
-                      "scroll-m-20 text-3xl text-primary font-extrabold tracking-tight",
+                      "scroll-m-20 text-[1.875rem] text-primary font-extrabold tracking-tight",
                   })}
                 >
                   Hello Tanstack Query!!
