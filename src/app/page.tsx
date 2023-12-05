@@ -1,17 +1,18 @@
-import { ModeToggle } from "@/components/ModeToggle";
-import TodosClient from "@/components/TodosClient";
+import { buttonVariants } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col gap-8 py-12 px-24">
-      <div className="flex justify-between w-full gap-8 ">
-        <h1 className="scroll-m-20 text-3xl text-primary font-extrabold tracking-tight lg:text-4xl underline underline-offset-4">
-          Hello Tanstack Query!!
-        </h1>
-        <ModeToggle />
+    <>
+      <h2 className="text-2xl text-center pt-12 text-primary">{`Testing the new 'React Query 5' w/ 'Next.js 14'`}</h2>
+      <div className="flex items-center justify-center flex-wrap gap-8">
+        <Link href="client" className={buttonVariants()}>
+          Client Side Query
+        </Link>
+        <Link href="server" className={buttonVariants()}>
+          Server Side Query
+        </Link>
       </div>
-
-      <TodosClient />
-    </main>
+    </>
   );
 }

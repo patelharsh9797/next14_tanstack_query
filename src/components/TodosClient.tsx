@@ -25,10 +25,12 @@ export default function TodosClient() {
     return <div>Error while loading the tasks, try again!!</div>;
 
   return (
-    <div className="grid md:grid-cols-2 gap-4">
-      {todos.map((todo) => (
-        <TodoCard {...todo} />
-      ))}
-    </div>
+    <>
+      <div className="grid md:grid-cols-2 gap-4">
+        {todos.map((todo) => (
+          <TodoCard {...todo} />
+        ))}
+      </div>
+    </>
   );
 }
