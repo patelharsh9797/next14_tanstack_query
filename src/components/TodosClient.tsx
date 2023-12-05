@@ -2,9 +2,15 @@
 import { TodoType } from "@/types";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
+import LoadingUi from "./LoadingUi";
+import TodoCard from "./TodoCard";
 
 export default function TodosClient() {
-  const { data, isLoading, isError } = useQuery({
+  const {
+    data: todos,
+    isLoading,
+    isError,
+  } = useQuery({
     queryKey: ["userTodos"],
     queryFn: async () => {
       const { data } = await axios.get("https://dummyjson.com/todos");
@@ -13,13 +19,16 @@ export default function TodosClient() {
     },
   });
 
-  if (isLoading) return <div>Loading the tasks...</div>;
-  if (isError || !data)
+  if (isLoading) return <LoadingUi />;
+
+  if (isError || !todos)
     return <div>Error while loading the tasks, try again!!</div>;
 
   return (
-    <>
-      <div className="flex flex-col gap-2">{JSON.stringify(data, null, 4)}</div>
-    </>
+    <div className="grid md:grid-cols-2 gap-4">
+      {todos.map((todo) => (
+        <TodoCard {...todo} />
+      ))}
+    </div>
   );
 }
