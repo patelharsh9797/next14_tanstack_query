@@ -9,9 +9,9 @@ export default function page() {
           This is CLIENT side fetch for todos. Check page source for more.
         </h2>
         <p className="text-muted-foreground">
-          If you refresh the page you are getting that loading state for while,
+          {` If you refresh the page you are getting that loading state for while,
           which indicate that it's calling fetch after the component loads on
-          client.
+          client.`}
         </p>
       </div>
       <Todos />
